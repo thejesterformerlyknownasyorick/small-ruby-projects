@@ -4,9 +4,15 @@ def substrings(string, dictionary)
     word_array = string.split(" ")
     i = 0
     while i < word_array.length
-        p dictionary.select { |word| word == word_array[i].downcase }
+        word_array[i] = dictionary.select { |word| word == word_array[i].downcase }
         i += 1
     end
+    word_array = word_array.flatten
+    word_count_hash = word_array.reduce(Hash.new(0)) do |word, count|
+        word[count] += 1
+        word
+    end
+    word_count_hash
 end
 
-substrings("below them Below Go GO gO going go down how howdy Horn", dictionary_array)
+p substrings("below them Below Go GO gO going go down how howdy Horn", dictionary_array)
