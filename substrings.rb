@@ -15,4 +15,4 @@ def substrings(string, dictionary)
     word_count_hash
 end
 
-p substrings("below them Below Go GO gO going go down how howdy Horn", dictionary_array)
+p substrings("below them black white red blue Below Go GO gO going go down how howdy Horn", dictionary_array)
